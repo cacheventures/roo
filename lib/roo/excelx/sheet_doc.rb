@@ -108,6 +108,10 @@ module Roo
           when 'f'
             formula = cell.content
           when 'v'
+            if cell.content.empty?
+              return create_empty_cell(coordinate, empty_cell)
+            end
+
             format = style_format(style)
             value_type = cell_value_type(cell_xml["t"], format)
 
