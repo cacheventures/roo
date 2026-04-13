@@ -350,6 +350,13 @@ class TestRworkbookExcelx < Minitest::Test
     assert_equal 'C2', xlsx.cell('c', 2)
   end
 
+  def test_empty_numeric_cell_value_is_treated_as_blank
+    xlsx = roo_class.new(File.join(TESTDIR, "empty_numeric_value.xlsx"))
+    xlsx.default_sheet = xlsx.sheets.first
+
+    assert_nil xlsx.cell("H", 2)
+  end
+
   def roo_class
     Roo::Excelx
   end
