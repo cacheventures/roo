@@ -8,8 +8,8 @@ describe Roo::Excelx do
 
   describe 'Constants' do
     describe 'ERROR_VALUES' do
-      it 'returns all possible errorr values' do
-        expect(described_class::ERROR_VALUES).to eq(%w(#N/A #REF! #NAME? #DIV/0! #NULL! #VALUE! #NUM!).to_set)
+      it 'returns all possible error values' do
+        expect(described_class::ERROR_VALUES).to eq(%w(#N/A #REF! #NAME? #DIV/0! #NULL! #VALUE! #NUM! #ERROR!).to_set)
       end
 
       it 'is a set' do
